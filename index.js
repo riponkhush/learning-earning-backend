@@ -111,7 +111,8 @@ async function run() {
       const options = { upsert: true };
       const updateDoc = {
         $set: {
-          smsDone:data.smsDone
+          smsDone:data.smsDone,
+          smsSenderemail: data.smsSenderemail
         }
       };
       const result = await createUserCollection.updateOne(filter, updateDoc, options);
